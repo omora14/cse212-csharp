@@ -1,6 +1,6 @@
 # C# Fundamentals Tutorial
 
-Welcome to the C# Fundamentals Tutorial.  Every beginning C# programmer should understand these basic topics:
+Welcome to the C# Fundamentals Tutorial.  Every beginning C# programmer should understand these basic topics.
 
 - [Conditionals](1-conditionals.md)
 - [Loops](2-loops.md)
