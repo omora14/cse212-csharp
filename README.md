@@ -1,29 +1,28 @@
-# CSE 212 | Programming with Data Structures
+# Welcome to the C# Data Structures Tutorial
 
-## GitHub Pages Setup
-### Actions
-When changes are pushed to the **Main** branch, a GitHub [action](https://github.com/byui-cse/cse212-csharp/actions) is started to deploy the content. It takes roughly 1 minute to deploy, but that could change as the size of the project changes
+Welcome to the C# Data Structures Tutorial. This tutorial will guide you through understanding and implementing three essential data structures: Stack, Linked List, and Tree.
 
-## Run Local Setup
-### Prerequisites
-* [Jekyll for Ruby](https://jekyllrb.com/docs/installation/)
+For any suggestions or contributions, create a pull request to go over it.
 
-### Setup
-Using terminal window in the `/docs` folder, run
+### How to do it.
 
-```bash
-bundle install
-```
+I've made this csharp tutorial to be self-guided, however, consider following the instructions to make it more interactive. This will help you to learn faster.
 
-### Run
-Using terminal window in the `/docs` folder, run
+1. Go through the .md file, make sure you understand what the Data Structure means and for what is for.
+2. Go through the example, once again, make sure you understand the example and read the comments.
+3. Go through the problem, if needed go back to the material, you might find some hints! :)
+4. Once you have finish with the problem. __NOT BEFORE__. Go to the solution file. The solution file is the BEST way to learn, compare your code with the solutuion, I leave comments to understand why is the way it is.
 
-```bash
-bundle exec jekyll serve --config local-config.yml
-```
+## Author Information
+* **Name:** Owen Morales
+* **Class:** CSE 212 Programming with Data Structures
+* **Email Address:** morales.owen@icloud.com
 
-### Temporary files
-The following folders / files will be added to your `/docs` folder that should not be committed to GitHub:
-* `_site/`
-* `.jekyll-cache/`
-* `Gemfile.lock`
+## Table of Contents
+1. [Stack](stack-problem-solution/stack.md)
+2. [Linked List](linkedlist-problem-solution/linked_list.md)
+3. [Tree](tree-problem-solution/tree.md)
+
+## Outline
+
+I have built an [outline](outline.md) file, you'll find there the structure of the the csharp tutorial.
