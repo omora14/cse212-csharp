@@ -1,5 +1,11 @@
 # Linked List Example
 
+## Navigation
+
+1. [Start Solving](csharp-tutorial/linkedlist-problem-solution/linked-list-problem.cs)
+2. [Go Back](README.md)
+3. [Outline](csharp-tutorial/outline.md)
+
 ## Introduction
 
 A **Linked List** is a fundamental data structure where each element (node) contains a value and a reference (link) to the next node in the sequence. Unlike arrays, linked lists do not require contiguous memory allocation, allowing for efficient insertion and deletion operations.
@@ -19,6 +25,22 @@ A **Linked List** is a fundamental data structure where each element (node) cont
 2. **Deletion**: Removing a node from the linked list.
 3. **Traversal**: Accessing each node in the list, usually starting from the head.
 4. **Search**: Finding a node with a specific value.
+
+## Advantages of Linked Lists
+
+- **Dynamic Size**: The size of a linked list can grow or shrink dynamically as nodes are added or removed.
+- **Efficient Insertions/Deletions**: Inserting or deleting nodes in a linked list is more efficient than in an array, especially when dealing with large data sets.
+
+## Disadvantages of Linked Lists
+
+- **Memory Usage**: Linked lists require extra memory for storing references (pointers).
+- **Traversal Time**: Accessing an element in a linked list takes O(n) time, as it requires traversing from the head to the desired node.
+
+## Types of Linked Lists
+
+1. **Singly Linked List**: Each node contains a reference to the next node.
+2. **Doubly Linked List**: Each node contains references to both the next and previous nodes.
+3. **Circular Linked List**: The last node points back to the first node, forming a circle.
 
 ## Example Implementation in C#
 
@@ -104,4 +126,78 @@ public class LinkedList
     {
         return size;
     }
+
+    // Find a node with a specific value
+    public Node Find(int value)
+    {
+        Node current = head;
+        while (current != null)
+        {
+            if (current.Data == value)
+                return current;
+            current = current.Next;
+        }
+        return null; // Value not found
+    }
+
+    // Remove a node with a specific value
+    public void Remove(int value)
+    {
+        if (head == null)
+            throw new InvalidOperationException("The list is empty.");
+
+        if (head.Data == value)
+        {
+            head = head.Next;
+            size--;
+            return;
+        }
+
+        Node current = head;
+        while (current.Next != null)
+        {
+            if (current.Next.Data == value)
+            {
+                current.Next = current.Next.Next;
+                size--;
+                return;
+            }
+            current = current.Next;
+        }
+
+        throw new InvalidOperationException("Value not found in the list.");
+    }
 }
+
+public class Program
+{
+    public static void Main()
+    {
+        LinkedList list = new LinkedList();
+
+        // Adding elements to the list
+        list.AddFirst(10);
+        list.AddLast(20);
+        list.AddLast(30);
+
+        // Display the list
+        list.Display();
+
+        // Remove the first element
+        list.RemoveFirst();
+        list.Display();
+
+        // Find a node with specific value
+        Node foundNode = list.Find(20);
+        Console.WriteLine(foundNode != null ? $"Found: {foundNode.Data}" : "Not Found");
+
+        // Remove a node with specific value
+        list.Remove(20);
+        list.Display();
+    }
+}
+```
+
+## Conclusion
+
+Linked lists are a versatile data structure that can dynamically grow and shrink in size, making them suitable for various applications. Understanding the implementation and operations of linked lists is essential for efficient data management and manipulation in software development.

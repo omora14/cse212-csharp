@@ -1,5 +1,11 @@
 # Binary Trees Tutorial
 
+## Navigation
+
+1. [Start Solving](csharp-tutorial/tree-problem-solution/tree-problem.cs)
+2. [Go Back](README.md)
+3. [Outline](csharp-tutorial/outline.md)
+
 ## Introduction to Binary Trees
 
 A **binary tree** is a hierarchical data structure in which each node has at most two children referred to as the left child and the right child. This structure is widely used in computer science for various applications, including expression parsing, data searching, and hierarchical data representation.

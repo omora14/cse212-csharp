@@ -1,7 +1,4 @@
-﻿@author Owen Morale
-    @since 7/18/2024
-
-// Problem Description:
+﻿// Problem Description:
 // You are tasked with creating a basic stack-based application to manage a stack of books. Each book has a title and an author.
 // Implement a stack to manage these books and perform the following operations:
 //

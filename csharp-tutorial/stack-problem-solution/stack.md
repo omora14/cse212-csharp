@@ -1,5 +1,11 @@
 # Stack Data Structure Tutorial
 
+## Navigation
+
+1. [Start Solving](csharp-tutorial/stack-problem-solution/stack-problem.cs)
+2. [Go Back](README.md)
+3. [Outline](csharp-tutorial/outline.md)
+
 ## 1. Introduction to Stack
 
 A stack is a linear data structure that operates on a Last In, First Out (LIFO) principle. This means that the last element added to the stack will be the first one to be removed. Stacks are used in various scenarios including function call management, expression evaluation, and undo mechanisms.
@@ -100,3 +106,7 @@ public class Program
         Console.WriteLine("Stack size is: " + stack.Size());
     }
 }
+```
+### Conclusion
+
+Stacks are versatile and widely used data structures that follow the LIFO principle. Understanding how to implement and use stacks is crucial for solving various computational problems and optimizing application performance. The provided C# examples should give you a solid foundation to start working with stacks in your projects.

@@ -1,11 +1,7 @@
-﻿@author Owen Morale
-    @since 7/18/2024
-
-// Solution Description:
+﻿// Solution Description:
 // Below is a solution to the stack problem involving books. This solution demonstrates the implementation of a `Book` class,
 // a `BookStack` class using a stack, and a `Main` method to test the functionality.
 
-// Book.cs
 public class Book
 {
     public string Title { get; }

@@ -18,11 +18,14 @@ I've made this csharp tutorial to be self-guided, however, consider following th
 * **Class:** CSE 212 Programming with Data Structures
 * **Email Address:** morales.owen@icloud.com
 
-## Table of Contents
-1. [Stack](stack-problem-solution/stack.md)
-2. [Linked List](linkedlist-problem-solution/linked_list.md)
-3. [Tree](tree-problem-solution/tree.md)
+## Table of Contents 
+
+Now it's time to shine! Select the topic you want to start learning now!
+
+1. [Stack](csharp-tutorial/stack-problem-solution/stack.md)
+2. [Linked List](csharp-tutorial/linkedlist-problem-solution/linked-list.md)
+3. [Tree](csharp-tutorial/tree-problem-solution/tree.md)
 
 ## Outline
 
-I have built an [outline](outline.md) file, you'll find there the structure of the the csharp tutorial.
+I have built an [outline](csharp-tutorial/outline.md) file, you'll find there the structure of the the csharp tutorial.
