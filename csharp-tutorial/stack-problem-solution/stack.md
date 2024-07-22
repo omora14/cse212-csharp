@@ -2,9 +2,9 @@
 
 ## Navigation
 
-1. [Start Solving](csharp-tutorial/stack-problem-solution/stack-problem.cs)
-2. [Go Back](README.md)
-3. [Outline](csharp-tutorial/outline.md)
+1. [Start Solving](stack-problem.cs)
+2. [Go Back](../../README.md)
+3. [Outline](../outline.md)
 
 ## 1. Introduction to Stack
 

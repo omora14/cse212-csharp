@@ -2,9 +2,9 @@
 
 ## Navigation
 
-1. [Start Solving](csharp-tutorial/tree-problem-solution/tree-problem.cs)
-2. [Go Back](README.md)
-3. [Outline](csharp-tutorial/outline.md)
+1. [Start Solving](tree-problem.cs)
+2. [Go Back](../../README.md)
+3. [Outline](../outline.md)
 
 ## Introduction to Binary Trees
 

@@ -1,9 +1,9 @@
 # C# Data Structures Tutorial
-## I. Welcome
+## I. [Welcome](../README.md)
 * Introduction
 * Contact Information
 
-## II. Stack
+## II. [Stack](stack-problem-solution/stack.md)
 * Introduction to Stack
 * Overview and Purpose
 * Implementation in C#
@@ -11,7 +11,7 @@
 * Example Problem: Implementing a stack-based solution
 * Problem to Solve: Designing a problem for the student to solve using a stack
 
-## III. Linked List
+## III. [Linked List](linkedlist-problem-solution/linked-list.md)
 * Introduction to Linked List
 * Overview and Purpose
 * Implementation in C#
@@ -19,7 +19,7 @@
 * Example Problem: Using a linked list to manage data
 * Problem to Solve: Designing a problem for the student to solve using a linked list
 
-## IV. Tree
+## IV. [Tree](tree-problem-solution/tree.md)
 * Introduction to Trees
 * Overview and Purpose
 * Implementation in C#

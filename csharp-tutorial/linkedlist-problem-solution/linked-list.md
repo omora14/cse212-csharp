@@ -2,9 +2,9 @@
 
 ## Navigation
 
-1. [Start Solving](csharp-tutorial/linkedlist-problem-solution/linked-list-problem.cs)
-2. [Go Back](README.md)
-3. [Outline](csharp-tutorial/outline.md)
+1. [Start Solving](linked-list-problem.cs)
+2. [Go Back](../../README.md)
+3. [Outline](../outline.md)
 
 ## Introduction
 
