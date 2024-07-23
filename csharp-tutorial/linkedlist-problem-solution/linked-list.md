@@ -19,18 +19,10 @@ Consider a music playlist application where each song can be dynamically added o
 Linked lists are suitable when you need a dynamic data structure that allows efficient insertions and deletions. Here are some scenarios where using a linked list is beneficial:
 
 1. **Dynamic Memory Allocation**: Linked lists are ideal when the number of elements is not known in advance or when you expect frequent insertions and deletions. They avoid the overhead of resizing and copying that occurs with arrays.
-
 2. **Implementing Queues and Stacks**: Linked lists can be used to implement queues and stacks. Their ability to efficiently add and remove elements from both ends makes them a good choice for these data structures.
-
 3. **Memory-Constrained Environments**: In environments where memory is fragmented or limited, linked lists allow for efficient use of memory without needing contiguous blocks.
-
 4. **Sparse Data Structures**: Linked lists are useful for representing sparse matrices or other data structures where most elements are zero or empty. Each non-zero element can be stored in a node with a reference to its position.
-
 5. **Adjacency Lists in Graphs**: Linked lists are often used to represent adjacency lists in graph data structures, where each node maintains a list of its adjacent nodes.
-
-### Example Scenario
-
-Consider a music playlist application where users can add and remove songs. Using a linked list allows you to efficiently manage the playlist, as you can add or remove songs without needing to shift other elements, unlike in an array.
 
 ## Components of a Linked List
 
@@ -64,123 +56,130 @@ Consider a music playlist application where users can add and remove songs. Usin
 2. **Doubly Linked List**: Each node contains references to both the next and previous nodes, allowing traversal in both directions.
 3. **Circular Linked List**: The last node points back to the first node, forming a circular chain, which can be useful for applications that require a cyclic iteration.
 
-## Example Implementation in C#
+## Real-World Problem: Managing a Playlist
 
-Below is a simple implementation of a singly linked list in C#:
+Imagine you are developing a music playlist application where users can add, remove, and reorder songs. Using a linked list allows you to efficiently manage the playlist, as you can add or remove songs without needing to shift other elements, unlike in an array.
+
+### Example Implementation in C#
+
+**I will be using code as examples, please make sure you read the comments I have added in the code, this can be identify because of its green letters or the two slashes (//) before every sentence**
+
+
+Below is a simple implementation of a singly linked list in C# tailored to manage a music playlist with detailed explanations for better understanding:
 
 ```csharp
-// Node class representing an element in the linked list
-public class Node
+// Node class representing a song in the playlist
+public class Song
 {
-    public int Data { get; set; } // Value of the node
-    public Node Next { get; set; } // Reference to the next node
+    public string Title { get; set; } // Title of the song
+    public Song Next { get; set; } // Reference to the next song
 
-    // Constructor to initialize a node with data and an optional reference to the next node
-    public Node(int data, Node next = null)
+    // Constructor to initialize a song with a title and an optional reference to the next song
+    public Song(string title, Song next = null)
     {
-        Data = data;
+        Title = title;
         Next = next;
     }
 }
 
-// LinkedList class implementing basic operations
-public class LinkedList
+// Playlist class implementing basic operations for managing a music playlist
+public class Playlist
 {
-    private Node head; // Reference to the first node in the list
-    private int size;  // Number of nodes in the list
+    private Song head; // Reference to the first song in the playlist
+    private int size;  // Number of songs in the playlist
 
-    // Constructor to initialize an empty linked list
-    public LinkedList()
+    // Constructor to initialize an empty playlist
+    public Playlist()
     {
         head = null;
         size = 0;
     }
 
-    // Add a new node at the beginning of the list
-    public void AddFirst(int data)
+    // Add a new song at the beginning of the playlist
+    public void AddFirst(string title)
     {
-        Node newNode = new Node(data, head); // Create a new node pointing to the current head
-        head = newNode; // Update the head to the new node
-        size++; // Increase the size of the list
+        Song newSong = new Song(title, head); // Create a new song pointing to the current head
+        head = newSong; // Update the head to the new song
+        size++; // Increase the size of the playlist
     }
 
-    // Add a new node at the end of the list
-    public void AddLast(int data)
+    // Add a new song at the end of the playlist
+    public void AddLast(string title)
     {
         if (head == null)
         {
-            AddFirst(data); // If list is empty, add as the first node
+            AddFirst(title); // If playlist is empty, add as the first song
             return;
         }
 
-        Node current = head;
-        while (current.Next != null) // Traverse to the last node
+        Song current = head;
+        while (current.Next != null) // Traverse to the last song
         {
             current = current.Next;
         }
 
-        current.Next = new Node(data); // Add the new node at the end
-        size++; // Increase the size of the list
+        current.Next = new Song(title); // Add the new song at the end
+        size++; // Increase the size of the playlist
     }
 
-    // Remove the first node from the list
+    // Remove the first song from the playlist
     public void RemoveFirst()
     {
         if (head == null)
-            throw new InvalidOperationException("The list is empty.");
+            throw new InvalidOperationException("The playlist is empty.");
 
-        head = head.Next; // Update the head to the next node
-        size--; // Decrease the size of the list
+        head = head.Next; // Update the head to the next song
+        size--; // Decrease the size of the playlist
     }
 
-    // Traverse and display the list
+    // Display the playlist
     public void Display()
     {
-        Node current = head;
+        Song current = head;
         while (current != null) // Traverse from the head to the end
         {
-            Console.Write(current.Data + " -> "); // Display the node data
-            current = current.Next; // Move to the next node
+            Console.Write(current.Title + " -> "); // Display the song title
+            current = current.Next; // Move to the next song
         }
-        Console.WriteLine("null"); // Indicate the end of the list
+        Console.WriteLine("null"); // Indicate the end of the playlist
     }
 
-    // Get the size of the list
+    // Get the size of the playlist
     public int Size()
     {
         return size;
     }
 
-    // Find a node with a specific value
-    public Node Find(int value)
+    // Find a song with a specific title
+    public Song Find(string title)
     {
-        Node current = head;
+        Song current = head;
         while (current != null)
         {
-            if (current.Data == value)
+            if (current.Title == title)
                 return current;
             current = current.Next;
         }
-        return null; // Value not found
+        return null; // Title not found
     }
 
-    // Remove a node with a specific value
-    public void Remove(int value)
+    // Remove a song with a specific title
+    public void Remove(string title)
     {
         if (head == null)
-            throw new InvalidOperationException("The list is empty.");
+            throw new InvalidOperationException("The playlist is empty.");
 
-        if (head.Data == value)
+        if (head.Title == title)
         {
             head = head.Next;
             size--;
             return;
         }
 
-        Node current = head;
+        Song current = head;
         while (current.Next != null)
         {
-            if (current.Next.Data == value)
+            if (current.Next.Title == title)
             {
                 current.Next = current.Next.Next;
                 size--;
@@ -189,7 +188,7 @@ public class LinkedList
             current = current.Next;
         }
 
-        throw new InvalidOperationException("Value not found in the list.");
+        throw new InvalidOperationException("Song not found in the playlist.");
     }
 }
 
@@ -197,38 +196,31 @@ public class Program
 {
     public static void Main()
     {
-        LinkedList list = new LinkedList();
+        Playlist playlist = new Playlist();
 
-        // Adding elements to the list
-        list.AddFirst(10);
-        list.AddLast(20);
-        list.AddLast(30);
+        // Adding songs to the playlist
+        playlist.AddFirst("Song 1");
+        playlist.AddLast("Song 2");
+        playlist.AddLast("Song 3");
 
-        // Display the list
-        list.Display();
+        // Display the playlist
+        playlist.Display();
 
-        // Remove the first element
-        list.RemoveFirst();
-        list.Display();
+        // Remove the first song
+        playlist.RemoveFirst();
+        playlist.Display();
 
-        // Find a node with a specific value
-        Node foundNode = list.Find(20);
-        Console.WriteLine(foundNode != null ? $"Found: {foundNode.Data}" : "Not Found");
+        // Find a song with a specific title
+        Song foundSong = playlist.Find("Song 2");
+        Console.WriteLine(foundSong != null ? $"Found: {foundSong.Title}" : "Not Found");
 
-        // Remove a node with a specific value
-        list.Remove(20);
-        list.Display();
+        // Remove a song with a specific title
+        playlist.Remove("Song 2");
+        playlist.Display();
     }
 }
 ```
-## Real-World Problem: Managing a Playlist
 
-Imagine you are developing a music playlist application where users can add, remove, and reorder songs. Using a linked list allows you to efficiently add new songs to the beginning or end of the playlist and remove songs without shifting other elements. Here's how you might use a linked list for this:
+# Conclusion
 
-1. Add a Song: When a user adds a song to the playlist, you can insert it at the end of the list using AddLast.
-2. Remove a Song: To remove a song, you can search for the song by its title and then use Remove to delete it from the list.
-3. Display Playlist: Use Display to show all songs in the playlist in the order they were added.
-
-## Conclusion
-
-Linked lists are a versatile and dynamic data structure that provides efficient insertion and deletion operations compared to arrays. Understanding linked lists is crucial for solving problems that involve dynamic data management, such as implementing playlists or other sequential data structures. The provided C# examples demonstrate how to implement and use linked lists effectively, offering a solid foundation for tackling various computational challenges.
+Linked lists are a versatile and dynamic data structure that provides efficient insertion and deletion operations compared to arrays. Understanding linked lists is crucial for solving problems that involve dynamic data management, such as implementing and managing a music playlist.

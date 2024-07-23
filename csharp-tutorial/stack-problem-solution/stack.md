@@ -32,7 +32,6 @@ Stacks are ideal when you need to manage data in a Last In, First Out (LIFO) ord
 
 Imagine you are designing a text editor that needs an undo feature. Each editing operation (e.g., typing a letter, deleting a word) is pushed onto a stack. When the user wants to undo an operation, the most recent operation is popped from the stack and reversed.
 
-
 ## 2. Key Operations of Stack
 
 Stacks support the following key operations:
@@ -52,6 +51,8 @@ Stacks support the following key operations:
 
 ## 4. Implementing a Stack in C#
 
+**I will be using code as examples, please make sure you read the comments I have added in the code, this can be identify because of its green letters or the two slashes (//) before every sentence**
+
 Below is a simple implementation of a stack using a list in C#:
 
 ```csharp
@@ -60,6 +61,7 @@ using System.Collections.Generic;
 
 public class Stack<T>
 {
+    // Internal list to hold stack elements
     private List<T> elements = new List<T>();
 
     // Push method adds an element to the top of the stack
@@ -74,8 +76,8 @@ public class Stack<T>
         if (IsEmpty())
             throw new InvalidOperationException("The stack is empty.");
         
-        T value = elements[elements.Count - 1];
-        elements.RemoveAt(elements.Count - 1);
+        T value = elements[elements.Count - 1]; // Get the top element
+        elements.RemoveAt(elements.Count - 1);  // Remove the top element
         return value;
     }
 
@@ -85,7 +87,7 @@ public class Stack<T>
         if (IsEmpty())
             throw new InvalidOperationException("The stack is empty.");
         
-        return elements[elements.Count - 1];
+        return elements[elements.Count - 1]; // Return the top element
     }
 
     // IsEmpty method checks if the stack is empty
@@ -141,6 +143,7 @@ using System.Collections.Generic;
 
 public class TaskManager
 {
+    // Stack to hold the tasks
     private Stack<string> taskStack = new Stack<string>();
 
     // Add a task and push it onto the stack
@@ -177,6 +180,7 @@ public class Program
 {
     public static void Main()
     {
+        // Create an instance of TaskManager
         TaskManager manager = new TaskManager();
 
         // Adding tasks
@@ -196,6 +200,6 @@ public class Program
 }
 ```
 
-## Conclusion
+# Conclusion
 
 Stacks are versatile and widely used data structures that follow the LIFO principle. Understanding how to implement and use stacks is crucial for solving various computational problems and optimizing application performance. The provided C# examples illustrate how stacks can be applied in practical scenarios such as browser history management and task management with undo functionality. By using these examples, you can gain a deeper understanding of how stacks can be effectively utilized in real-world applications.
